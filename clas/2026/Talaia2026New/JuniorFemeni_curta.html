@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JuniorFemeni_curta</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+    :root {
+        --primary: #2563eb;
+        --surface: #ffffff;
+        --background: #f8fafc;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: var(--surface);
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+    }
+    h1 { margin: 0; font-size: 2rem; color: var(--text-main); }
+    .meta { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    .card {
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+    }
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        background-color: #eff6ff;
+        color: var(--primary);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.2s;
+    }
+    .btn-back:hover {
+        background-color: #dbeafe;
+    }
+    table.dataTable { border-collapse: collapse !important; width: 100% !important; }
+    table.dataTable thead th { background-color: var(--background); border-bottom: 2px solid var(--border) !important; padding: 14px 16px; font-weight: 600; text-align: left; }
+    table.dataTable tbody td { border-bottom: 1px solid var(--border); padding: 14px 16px; color: #334155; }
+    table.dataTable tbody tr:hover { background-color: #f1f5f9 !important; }
+    .dataTables_wrapper .dataTables_filter input { border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; outline: none; }
+    .dataTables_wrapper .dataTables_filter input:focus { border-color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>JuniorFemeni_curta</h1>
+    <div class="meta">⏱️ Actualitzat el: 28/04/2026 23:18:14</div>
+</div>
+<div class="container">
+    
+<a href="index.html" class="btn-back">← Tornar a l'índex</a>
+<div class="card">
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>equip</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>213</td>
+      <td>Aitana</td>
+      <td>Belda Villamayor</td>
+      <td>Junior</td>
+      <td>Birranners</td>
+      <td>2026-04-26 11:51:05.524</td>
+      <td>0 days 01:21:05</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>203</td>
+      <td>Naia</td>
+      <td>Albiñana Martínez</td>
+      <td>Junior</td>
+      <td>Grup Roca Running Club</td>
+      <td>2026-04-26 11:52:08.059</td>
+      <td>0 days 01:22:08</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script>
+$(document).ready(function() {
+    $('.display').DataTable({
+        pageLength: -1,
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/ca.json'
+        }
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

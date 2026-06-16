@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LocalMasculi_curta</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+    :root {
+        --primary: #2563eb;
+        --surface: #ffffff;
+        --background: #f8fafc;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: var(--surface);
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+    }
+    h1 { margin: 0; font-size: 2rem; color: var(--text-main); }
+    .meta { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    .card {
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+    }
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        background-color: #eff6ff;
+        color: var(--primary);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.2s;
+    }
+    .btn-back:hover {
+        background-color: #dbeafe;
+    }
+    table.dataTable { border-collapse: collapse !important; width: 100% !important; }
+    table.dataTable thead th { background-color: var(--background); border-bottom: 2px solid var(--border) !important; padding: 14px 16px; font-weight: 600; text-align: left; }
+    table.dataTable tbody td { border-bottom: 1px solid var(--border); padding: 14px 16px; color: #334155; }
+    table.dataTable tbody tr:hover { background-color: #f1f5f9 !important; }
+    .dataTables_wrapper .dataTables_filter input { border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; outline: none; }
+    .dataTables_wrapper .dataTables_filter input:focus { border-color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>LocalMasculi_curta</h1>
+    <div class="meta">⏱️ Actualitzat el: 28/04/2026 23:18:25</div>
+</div>
+<div class="container">
+    
+<a href="index.html" class="btn-back">← Tornar a l'índex</a>
+<div class="card">
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>equip</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>375</td>
+      <td>Roger</td>
+      <td>Ventosa Vicente</td>
+      <td>Vetera</td>
+      <td>Grup Roca Running Club</td>
+      <td>2026-04-26 11:20:00.882</td>
+      <td>0 days 00:50:00</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>238</td>
+      <td>Adrián</td>
+      <td>De La Rubia Torres</td>
+      <td>Senior</td>
+      <td>SENSE</td>
+      <td>2026-04-26 11:21:52.590</td>
+      <td>0 days 00:51:52</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>306</td>
+      <td>Enric</td>
+      <td>Mascaros gimenez</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:24:29.903</td>
+      <td>0 days 00:54:29</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>338</td>
+      <td>Esteban</td>
+      <td>Retamal Fernández</td>
+      <td>Vetera</td>
+      <td>Stevefoxed</td>
+      <td>2026-04-26 11:25:32.939</td>
+      <td>0 days 00:55:32</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>354</td>
+      <td>Joan</td>
+      <td>Santacana Vall</td>
+      <td>Senior</td>
+      <td>C.E.Deporunners</td>
+      <td>2026-04-26 11:26:41.512</td>
+      <td>0 days 00:56:41</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>331</td>
+      <td>Christian</td>
+      <td>Puertas Rodríguez</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:28:09.394</td>
+      <td>0 days 00:58:09</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>275</td>
+      <td>Xavier</td>
+      <td>Herreros Llor</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:28:16.662</td>
+      <td>0 days 00:58:16</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>228</td>
+      <td>Joaquim</td>
+      <td>Castellvi</td>
+      <td>Vetera</td>
+      <td>C.E. Deporunners</td>
+      <td>2026-04-26 11:30:13.926</td>
+      <td>0 days 01:00:13</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>254</td>
+      <td>RAFAEL</td>
+      <td>FISCHER</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:30:16.525</td>
+      <td>0 days 01:00:16</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>345</td>
+      <td>Toni</td>
+      <td>Ruiz</td>
+      <td>Master</td>
+      <td>CE Deporunners</td>
+      <td>2026-04-26 11:30:33.715</td>
+      <td>0 days 01:00:33</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>241</td>
+      <td>Oriol</td>
+      <td>Descalzi Marron</td>
+      <td>Senior</td>
+      <td>USESTIMEMNURIES</td>
+      <td>2026-04-26 11:31:44.072</td>
+      <td>0 days 01:01:44</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>202</td>
+      <td>Luis</td>
+      <td>Albà Robles</td>
+      <td>Vetera</td>
+      <td>JUNGLE FITNESS CLUB</td>
+      <td>2026-04-26 11:32:41.240</td>
+      <td>0 days 01:02:41</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>268</td>
+      <td>Milo</td>
+      <td>Gava Cuniberto</td>
+      <td>Junior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:33:19.967</td>
+      <td>0 days 01:03:19</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>386</td>
+      <td>Marcin</td>
+      <td>Denysenko</td>
+      <td>Vetera</td>
+      <td>Deporunners</td>
+      <td>2026-04-26 11:33:20.675</td>
+      <td>0 days 01:03:20</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>336</td>
+      <td>Serafín</td>
+      <td>Ramírez Velasco</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:34:42.085</td>
+      <td>0 days 01:04:42</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>355</td>
+      <td>Alfonso</td>
+      <td>Santos Tapia</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:34:55.119</td>
+      <td>0 days 01:04:55</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>222</td>
+      <td>Ferran</td>
+      <td>Calvet Gonzalez</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:35:12.152</td>
+      <td>0 days 01:05:12</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>290</td>
+      <td>Sebastian</td>
+      <td>López López</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:35:21.581</td>
+      <td>0 days 01:05:21</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>264</td>
+      <td>Pablo</td>
+      <td>García Mangas</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:36:01.461</td>
+      <td>0 days 01:06:01</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>253</td>
+      <td>Rubén</td>
+      <td>Ferrer Santos</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:36:28.350</td>
+      <td>0 days 01:06:28</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>367</td>
+      <td>Marc</td>
+      <td>Tort Sonet</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:36:33.897</td>
+      <td>0 days 01:06:33</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>220</td>
+      <td>Clément</td>
+      <td>Bossy</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:36:52.163</td>
+      <td>0 days 01:06:52</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>346</td>
+      <td>Adrià</td>
+      <td>Ruiz Martín</td>
+      <td>Junior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:37:24.457</td>
+      <td>0 days 01:07:24</td>
+    </tr>
+    <tr>
+      <td>24</td>
+      <td>255</td>
+      <td>Enric</td>
+      <td>Fontdecaba Baig</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:37:32.900</td>
+      <td>0 days 01:07:32</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>247</td>
+      <td>Lluis</td>
+      <td>Farré Atoche</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:38:21.132</td>
+      <td>0 days 01:08:21</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>312</td>
+      <td>Carles</td>
+      <td>Morata Sancho</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:38:45.540</td>
+      <td>0 days 01:08:45</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>208</td>
+      <td>Ricard</td>
+      <td>Anton Velasco</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:38:46.339</td>
+      <td>0 days 01:08:46</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>310</td>
+      <td>Borja</td>
+      <td>Montañés Vicente</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:39:17.958</td>
+      <td>0 days 01:09:17</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>83</td>
+      <td>Michele</td>
+      <td>Paccapelo</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:40:20.071</td>
+      <td>0 days 01:10:20</td>
+    </tr>
+    <tr>
+      <td>30</td>
+      <td>299</td>
+      <td>MIQUEL</td>
+      <td>MARTÍ JARIOD</td>
+      <td>Senior</td>
+      <td>no</td>
+      <td>2026-04-26 11:40:29.414</td>
+      <td>0 days 01:10:29</td>
+    </tr>
+    <tr>
+      <td>31</td>
+      <td>251</td>
+      <td>Ferran</td>
+      <td>Ferrer Ferrando</td>
+      <td>SuperMaster</td>
+      <td>Falso llano</td>
+      <td>2026-04-26 11:41:01.208</td>
+      <td>0 days 01:11:01</td>
+    </tr>
+    <tr>
+      <td>32</td>
+      <td>262</td>
+      <td>Juan Manuel</td>
+      <td>Garcia Garcia</td>
+      <td>Master</td>
+      <td>Penya Ribes</td>
+      <td>2026-04-26 11:41:58.231</td>
+      <td>0 days 01:11:58</td>
+    </tr>
+    <tr>
+      <td>33</td>
+      <td>267</td>
+      <td>Heraldo</td>
+      <td>Gava</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:41:58.757</td>
+      <td>0 days 01:11:58</td>
+    </tr>
+    <tr>
+      <td>34</td>
+      <td>243</td>
+      <td>Josep</td>
+      <td>Duran Relat</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:42:55.635</td>
+      <td>0 days 01:12:55</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td>232</td>
+      <td>Albert</td>
+      <td>Catllà Rovira</td>
+      <td>Master</td>
+      <td>GRUP ROCA RUNNING CLUB</td>
+      <td>2026-04-26 11:43:06.557</td>
+      <td>0 days 01:13:06</td>
+    </tr>
+    <tr>
+      <td>36</td>
+      <td>350</td>
+      <td>David</td>
+      <td>Salas Cubillo</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:43:33.561</td>
+      <td>0 days 01:13:33</td>
+    </tr>
+    <tr>
+      <td>37</td>
+      <td>302</td>
+      <td>Xavier</td>
+      <td>Martinez Fernandez</td>
+      <td>Master</td>
+      <td>C E. Trail Vilanova i la Geltrú</td>
+      <td>2026-04-26 11:43:56.343</td>
+      <td>0 days 01:13:56</td>
+    </tr>
+    <tr>
+      <td>38</td>
+      <td>318</td>
+      <td>Eloi</td>
+      <td>Orriols paterna</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:45:23.396</td>
+      <td>0 days 01:15:23</td>
+    </tr>
+    <tr>
+      <td>39</td>
+      <td>373</td>
+      <td>Aaron</td>
+      <td>Vellarino Coll</td>
+      <td>Senior</td>
+      <td>-</td>
+      <td>2026-04-26 11:45:42.831</td>
+      <td>0 days 01:15:42</td>
+    </tr>
+    <tr>
+      <td>40</td>
+      <td>323</td>
+      <td>Jose Luis</td>
+      <td>Pardo</td>
+      <td>SuperMaster</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:45:48.508</td>
+      <td>0 days 01:15:48</td>
+    </tr>
+    <tr>
+      <td>41</td>
+      <td>282</td>
+      <td>Paulino</td>
+      <td>Larrea Lacasa</td>
+      <td>SuperMaster</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:45:54.737</td>
+      <td>0 days 01:15:54</td>
+    </tr>
+    <tr>
+      <td>42</td>
+      <td>224</td>
+      <td>Carles</td>
+      <td>Caneda Mora</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:46:17.736</td>
+      <td>0 days 01:16:17</td>
+    </tr>
+    <tr>
+      <td>43</td>
+      <td>261</td>
+      <td>JORGE</td>
+      <td>GARCIA</td>
+      <td>Master</td>
+      <td>BIRRANERS</td>
+      <td>2026-04-26 11:46:25.475</td>
+      <td>0 days 01:16:25</td>
+    </tr>
+    <tr>
+      <td>44</td>
+      <td>214</td>
+      <td>Alex</td>
+      <td>Belda Villamayor</td>
+      <td>Junior</td>
+      <td>Birranners</td>
+      <td>2026-04-26 11:46:26.746</td>
+      <td>0 days 01:16:26</td>
+    </tr>
+    <tr>
+      <td>45</td>
+      <td>364</td>
+      <td>Arnau</td>
+      <td>Tobarra Alvarez</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:46:28.506</td>
+      <td>0 days 01:16:28</td>
+    </tr>
+    <tr>
+      <td>46</td>
+      <td>303</td>
+      <td>Javier</td>
+      <td>Martinez Lera</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:46:59.553</td>
+      <td>0 days 01:16:59</td>
+    </tr>
+    <tr>
+      <td>47</td>
+      <td>321</td>
+      <td>Guillem</td>
+      <td>Ortoll i Saladié</td>
+      <td>Senior</td>
+      <td>C.E. Deporunners</td>
+      <td>2026-04-26 11:47:59.377</td>
+      <td>0 days 01:17:59</td>
+    </tr>
+    <tr>
+      <td>48</td>
+      <td>369</td>
+      <td>Arnau</td>
+      <td>Vall Foraster</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:48:36.363</td>
+      <td>0 days 01:18:36</td>
+    </tr>
+    <tr>
+      <td>49</td>
+      <td>335</td>
+      <td>Luis Mariano</td>
+      <td>Ramírez amores</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:49:11.024</td>
+      <td>0 days 01:19:11</td>
+    </tr>
+    <tr>
+      <td>50</td>
+      <td>210</td>
+      <td>Luke</td>
+      <td>Bates</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:49:11.688</td>
+      <td>0 days 01:19:11</td>
+    </tr>
+    <tr>
+      <td>51</td>
+      <td>337</td>
+      <td>CARLES</td>
+      <td>RAVENTOS BUSQUETS</td>
+      <td>Master</td>
+      <td>deporunners</td>
+      <td>2026-04-26 11:51:14.999</td>
+      <td>0 days 01:21:14</td>
+    </tr>
+    <tr>
+      <td>52</td>
+      <td>233</td>
+      <td>Jordi</td>
+      <td>Civico</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:51:40.554</td>
+      <td>0 days 01:21:40</td>
+    </tr>
+    <tr>
+      <td>53</td>
+      <td>204</td>
+      <td>Marc</td>
+      <td>Albiñana Soler</td>
+      <td>Master</td>
+      <td>Grup Roca Running Club</td>
+      <td>2026-04-26 11:52:12.476</td>
+      <td>0 days 01:22:12</td>
+    </tr>
+    <tr>
+      <td>54</td>
+      <td>286</td>
+      <td>Miquel</td>
+      <td>Limon Planesas</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:52:37.394</td>
+      <td>0 days 01:22:37</td>
+    </tr>
+    <tr>
+      <td>55</td>
+      <td>263</td>
+      <td>Luis</td>
+      <td>García luzon</td>
+      <td>Vetera</td>
+      <td>GRUPO ROCA</td>
+      <td>2026-04-26 11:52:49.235</td>
+      <td>0 days 01:22:49</td>
+    </tr>
+    <tr>
+      <td>56</td>
+      <td>244</td>
+      <td>Lluis</td>
+      <td>Eroles Ollé</td>
+      <td>SuperMaster</td>
+      <td>grup ROCA</td>
+      <td>2026-04-26 11:53:54.270</td>
+      <td>0 days 01:23:54</td>
+    </tr>
+    <tr>
+      <td>57</td>
+      <td>207</td>
+      <td>IGNASI</td>
+      <td>ALSO DE ODRIOZOLA</td>
+      <td>Vetera</td>
+      <td>AE TALAIA</td>
+      <td>2026-04-26 11:54:24.166</td>
+      <td>0 days 01:24:24</td>
+    </tr>
+    <tr>
+      <td>58</td>
+      <td>342</td>
+      <td>Josep</td>
+      <td>Román Ventosa</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:55:45.010</td>
+      <td>0 days 01:25:45</td>
+    </tr>
+    <tr>
+      <td>59</td>
+      <td>278</td>
+      <td>Ruben</td>
+      <td>Iglesias</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:56:21.073</td>
+      <td>0 days 01:26:21</td>
+    </tr>
+    <tr>
+      <td>60</td>
+      <td>212</td>
+      <td>Enrique</td>
+      <td>Belda</td>
+      <td>Master</td>
+      <td>Birranners</td>
+      <td>2026-04-26 11:57:30.629</td>
+      <td>0 days 01:27:30</td>
+    </tr>
+    <tr>
+      <td>61</td>
+      <td>315</td>
+      <td>OSCAR</td>
+      <td>MUÑOZ-TORRERO</td>
+      <td>Master</td>
+      <td>BL RUNNERS</td>
+      <td>2026-04-26 11:58:51.588</td>
+      <td>0 days 01:28:51</td>
+    </tr>
+    <tr>
+      <td>62</td>
+      <td>328</td>
+      <td>Raul</td>
+      <td>Perez Martinez</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:59:04.930</td>
+      <td>0 days 01:29:04</td>
+    </tr>
+    <tr>
+      <td>63</td>
+      <td>340</td>
+      <td>maximo</td>
+      <td>rodriguez</td>
+      <td>Vetera</td>
+      <td>BL RUNNERS</td>
+      <td>2026-04-26 12:00:35.970</td>
+      <td>0 days 01:30:35</td>
+    </tr>
+    <tr>
+      <td>64</td>
+      <td>211</td>
+      <td>Martijn</td>
+      <td>Bavelaar</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:10:24.122</td>
+      <td>0 days 01:40:24</td>
+    </tr>
+    <tr>
+      <td>65</td>
+      <td>288</td>
+      <td>Jordi</td>
+      <td>Lleó Sagué</td>
+      <td>SuperMaster</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:12:18.389</td>
+      <td>0 days 01:42:18</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script>
+$(document).ready(function() {
+    $('.display').DataTable({
+        pageLength: -1,
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/ca.json'
+        }
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Femeni_llarga</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+    :root {
+        --primary: #2563eb;
+        --surface: #ffffff;
+        --background: #f8fafc;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: var(--surface);
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+    }
+    h1 { margin: 0; font-size: 2rem; color: var(--text-main); }
+    .meta { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    .card {
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+    }
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        background-color: #eff6ff;
+        color: var(--primary);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.2s;
+    }
+    .btn-back:hover {
+        background-color: #dbeafe;
+    }
+    table.dataTable { border-collapse: collapse !important; width: 100% !important; }
+    table.dataTable thead th { background-color: var(--background); border-bottom: 2px solid var(--border) !important; padding: 14px 16px; font-weight: 600; text-align: left; }
+    table.dataTable tbody td { border-bottom: 1px solid var(--border); padding: 14px 16px; color: #334155; }
+    table.dataTable tbody tr:hover { background-color: #f1f5f9 !important; }
+    .dataTables_wrapper .dataTables_filter input { border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; outline: none; }
+    .dataTables_wrapper .dataTables_filter input:focus { border-color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>Femeni_llarga</h1>
+    <div class="meta">⏱️ Actualitzat el: 28/04/2026 23:18:43</div>
+</div>
+<div class="container">
+    
+<a href="index.html" class="btn-back">← Tornar a l'índex</a>
+<div class="card">
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>equip</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>50</td>
+      <td>Marta</td>
+      <td>Gibert Amat</td>
+      <td>Senior</td>
+      <td>Habitus</td>
+      <td>2026-04-26 11:49:09.409</td>
+      <td>0 days 01:49:09</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>26</td>
+      <td>Elba</td>
+      <td>Clots Figueras</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:55:10.756</td>
+      <td>0 days 01:55:10</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>22</td>
+      <td>Pilar</td>
+      <td>Casas</td>
+      <td>Vetera</td>
+      <td>Esportiu Penedès</td>
+      <td>2026-04-26 11:57:52.378</td>
+      <td>0 days 01:57:52</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>55</td>
+      <td>MIREIA</td>
+      <td>GONZÁLEZ CAPARRÓS</td>
+      <td>Vetera</td>
+      <td>us estimem nuries</td>
+      <td>2026-04-26 12:05:34.424</td>
+      <td>0 days 02:05:34</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>91</td>
+      <td>Paige</td>
+      <td>Roberts</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:17:47.633</td>
+      <td>0 days 02:17:47</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>104</td>
+      <td>Gemma</td>
+      <td>Valls Galisteo</td>
+      <td>Master</td>
+      <td>Us estimem Nuries</td>
+      <td>2026-04-26 12:23:50.800</td>
+      <td>0 days 02:23:50</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>45</td>
+      <td>Miriam</td>
+      <td>Flores ayala</td>
+      <td>Master</td>
+      <td>Us estimem nuries</td>
+      <td>2026-04-26 12:27:40.494</td>
+      <td>0 days 02:27:40</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>103</td>
+      <td>Alejandra</td>
+      <td>Valladares Ramos</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:33:49.708</td>
+      <td>0 days 02:33:49</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>20</td>
+      <td>Alejandra</td>
+      <td>Calderón Pérez</td>
+      <td>Senior</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:33:50.725</td>
+      <td>0 days 02:33:50</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>94</td>
+      <td>Gemma</td>
+      <td>Rosinés Poch</td>
+      <td>SuperMaster</td>
+      <td>US ESTIMEM NURIES</td>
+      <td>2026-04-26 12:41:08.683</td>
+      <td>0 days 02:41:08</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>87</td>
+      <td>emma</td>
+      <td>redondo ferret</td>
+      <td>Vetera</td>
+      <td>Us estimem Núries</td>
+      <td>2026-04-26 12:42:47.981</td>
+      <td>0 days 02:42:47</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>85</td>
+      <td>LAIA</td>
+      <td>PORRES VALLES</td>
+      <td>Senior</td>
+      <td>DESNIVELL+ BY AUTOFORUM</td>
+      <td>2026-04-26 13:00:48.448</td>
+      <td>0 days 03:00:48</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>38</td>
+      <td>CRIS</td>
+      <td>FERNANDEZ GARCIA</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 13:04:40.726</td>
+      <td>0 days 03:04:40</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script>
+$(document).ready(function() {
+    $('.display').DataTable({
+        pageLength: -1,
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/ca.json'
+        }
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

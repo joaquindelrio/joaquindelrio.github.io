@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MasterMasculi_llarga</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+    :root {
+        --primary: #2563eb;
+        --surface: #ffffff;
+        --background: #f8fafc;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: var(--surface);
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+    }
+    h1 { margin: 0; font-size: 2rem; color: var(--text-main); }
+    .meta { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    .card {
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+    }
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        background-color: #eff6ff;
+        color: var(--primary);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.2s;
+    }
+    .btn-back:hover {
+        background-color: #dbeafe;
+    }
+    table.dataTable { border-collapse: collapse !important; width: 100% !important; }
+    table.dataTable thead th { background-color: var(--background); border-bottom: 2px solid var(--border) !important; padding: 14px 16px; font-weight: 600; text-align: left; }
+    table.dataTable tbody td { border-bottom: 1px solid var(--border); padding: 14px 16px; color: #334155; }
+    table.dataTable tbody tr:hover { background-color: #f1f5f9 !important; }
+    .dataTables_wrapper .dataTables_filter input { border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; outline: none; }
+    .dataTables_wrapper .dataTables_filter input:focus { border-color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>MasterMasculi_llarga</h1>
+    <div class="meta">⏱️ Actualitzat el: 28/04/2026 23:18:34</div>
+</div>
+<div class="container">
+    
+<a href="index.html" class="btn-back">← Tornar a l'índex</a>
+<div class="card">
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>equip</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>72</td>
+      <td>Edu</td>
+      <td>Miranda Tamargo</td>
+      <td>Master</td>
+      <td>BARRADO TEAM</td>
+      <td>2026-04-26 11:35:44.142</td>
+      <td>0 days 01:35:44</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>106</td>
+      <td>JORDI</td>
+      <td>VIDAL CASAÑAS</td>
+      <td>Master</td>
+      <td>C.E. TRAIL VILANOVA I LA GELTRU</td>
+      <td>2026-04-26 11:39:27.742</td>
+      <td>0 days 01:39:27</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>17</td>
+      <td>Santi</td>
+      <td>BREÑA</td>
+      <td>Master</td>
+      <td>Atletesvng</td>
+      <td>2026-04-26 11:44:08.496</td>
+      <td>0 days 01:44:08</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>93</td>
+      <td>Juan</td>
+      <td>Rolon</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:48:20.020</td>
+      <td>0 days 01:48:20</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>7</td>
+      <td>Miquel</td>
+      <td>Arenas López</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:53:26.477</td>
+      <td>0 days 01:53:26</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>80</td>
+      <td>JORDI</td>
+      <td>OLIVELLA pujol</td>
+      <td>Master</td>
+      <td>RUNNERS ESPANYOL</td>
+      <td>2026-04-26 11:56:11.993</td>
+      <td>0 days 01:56:11</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>97</td>
+      <td>Josep Maria</td>
+      <td>Santó Salvat</td>
+      <td>Master</td>
+      <td>Us Estimem Núries</td>
+      <td>2026-04-26 11:57:07.767</td>
+      <td>0 days 01:57:07</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>58</td>
+      <td>Eduard</td>
+      <td>Huertas Rivera</td>
+      <td>Master</td>
+      <td>Manducarunners</td>
+      <td>2026-04-26 11:59:27.226</td>
+      <td>0 days 01:59:27</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>66</td>
+      <td>Sergio</td>
+      <td>Marin Ipas</td>
+      <td>Master</td>
+      <td>CE Deporunners</td>
+      <td>2026-04-26 12:04:06.233</td>
+      <td>0 days 02:04:06</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>105</td>
+      <td>Wim</td>
+      <td>Van Den Nest</td>
+      <td>Master</td>
+      <td>C.E. TRAIL VILANOVA I LA GELTRÚ</td>
+      <td>2026-04-26 12:04:59.021</td>
+      <td>0 days 02:04:59</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>70</td>
+      <td>manel</td>
+      <td>martos carmona</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:09:46.720</td>
+      <td>0 days 02:09:46</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>77</td>
+      <td>Albert</td>
+      <td>Mora Pla</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:12:59.251</td>
+      <td>0 days 02:12:59</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>98</td>
+      <td>Albert</td>
+      <td>Santos Franco</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:15:19.989</td>
+      <td>0 days 02:15:19</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>34</td>
+      <td>Jordi</td>
+      <td>Esquivel Ribalta</td>
+      <td>Master</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:16:29.198</td>
+      <td>0 days 02:16:29</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>75</td>
+      <td>Jordi</td>
+      <td>Montoliu Albet</td>
+      <td>Master</td>
+      <td>COC</td>
+      <td>2026-04-26 12:17:28.009</td>
+      <td>0 days 02:17:28</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>29</td>
+      <td>Manolo</td>
+      <td>Del valle capitán</td>
+      <td>Master</td>
+      <td>Cunit trail running</td>
+      <td>2026-04-26 12:33:12.779</td>
+      <td>0 days 02:33:12</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script>
+$(document).ready(function() {
+    $('.display').DataTable({
+        pageLength: -1,
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/ca.json'
+        }
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

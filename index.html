@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Índice de enlaces BIIGLE</title>
+  <style>
+    :root { --bg: #0f172a; --card:#111827; --text:#e5e7eb; --muted:#9ca3af; --accent:#22d3ee; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; background: linear-gradient(180deg, #0b1220, var(--bg)); color: var(--text); }
+    .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem 4rem; }
+    header { text-align: center; margin-bottom: 2rem; }
+    h1 { font-size: clamp(1.6rem, 1.2rem + 2vw, 2.2rem); margin: 0 0 0.25rem; letter-spacing: .4px; }
+    p.subtitle { color: var(--muted); margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.01)); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 1.25rem; box-shadow: 0 10px 30px rgba(0,0,0,.25); backdrop-filter: blur(4px); }
+    .card h2 { font-size: 1rem; margin: 0 0 .75rem; color: var(--text); font-weight: 600; }
+    .url { word-break: break-all; font-size: .85rem; color: var(--muted); margin: .25rem 0 1rem; }
+    .actions { display: flex; gap: .5rem; }
+    .btn { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .65rem .8rem; border-radius: 12px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.03); color: var(--text); text-decoration: none; cursor: pointer; transition: transform .06s ease, background .2s ease, border-color .2s ease; }
+    .btn:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.22); }
+    .btn:active { transform: translateY(1px); }
+    .btn.primary { border-color: rgba(34, 211, 238, .6); background: linear-gradient(180deg, rgba(34,211,238,.16), rgba(34,211,238,.06)); }
+    footer { text-align: center; color: var(--muted); font-size: .85rem; margin-top: 2rem; }
+    .index { color: var(--accent); font-weight: 700; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Índice de enlaces BIIGLE</h1>
+      <p class="subtitle">Haz clic para abrir cada proyecto en una pestaña nueva.</p>
+    </header>
+
+    <section class="grid" id="links"></section>
+
+    <footer>Generado automáticamente • Puedes editar los títulos a tu gusto.</footer>
+  </div>
+
+  <script>
+    const links = [
+      "https://biigle.party/p/5a0b9aef-e3cb-4ab0-acd5-c23be478a2f2/3b8debe5-d6ad-48d2-91b8-87054c086f9f",
+      "https://biigle.party/p/f0e7759e-3d38-40cb-87da-1f83dc2ad38a/2df48563-efc6-4333-a430-235653bfe3b6",
+      "https://biigle.party/p/deefb0b0-2631-486a-b3fa-b39b83d52f27/90af6d8d-c1ae-4d0b-bcdb-0f15b65262a4",
+      "https://biigle.party/p/c958b77c-a235-433a-b147-2563b4080072/aa9900c4-e5f0-469c-88f4-c64378b3b8e2",
+      "https://biigle.party/p/9e8bb86b-0ab4-413f-8dee-13c1859cdd93/9b9bf310-bffc-475a-a4f3-9b9cc61c338a"
+    ];
+
+    const grid = document.getElementById('links');
+
+    links.forEach((href, i) => {
+      const host = new URL(href).host.replace('www.', '');
+      const short = href.replace(/^https?:\/\//, '').slice(0, 70) + (href.length > 70 ? '…' : '');
+
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.innerHTML = `
+        <h2><span class="index">#${i+1}</span> ${host}</h2>
+        <div class="url">${short}</div>
+        <div class="actions">
+          <a class="btn primary" href="${href}" target="_blank" rel="noopener noreferrer">Abrir</a>
+          <button class="btn" data-copy="${href}">Copiar URL</button>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-copy]');
+      if (!btn) return;
+      const text = btn.getAttribute('data-copy');
+      navigator.clipboard.writeText(text).then(() => {
+        const original = btn.textContent;
+        btn.textContent = 'Copiado ✓';
+        setTimeout(() => (btn.textContent = original), 1200);
+      }).catch(() => {
+        alert('No pude copiar al portapapeles.');
+      });
+    });
+  </script>
+</body>
+</html>

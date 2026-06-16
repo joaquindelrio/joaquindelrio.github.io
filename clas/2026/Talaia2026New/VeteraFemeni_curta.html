@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VeteraFemeni_curta</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+    :root {
+        --primary: #2563eb;
+        --surface: #ffffff;
+        --background: #f8fafc;
+        --text-main: #0f172a;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color: var(--surface);
+        padding: 2rem;
+        border-bottom: 1px solid var(--border);
+        text-align: center;
+    }
+    h1 { margin: 0; font-size: 2rem; color: var(--text-main); }
+    .meta { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .container {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+    }
+    .card {
+        background: var(--surface);
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        padding: 2rem;
+        margin-bottom: 2rem;
+        overflow-x: auto;
+    }
+    .btn-back {
+        display: inline-flex;
+        align-items: center;
+        padding: 0.6rem 1.2rem;
+        background-color: #eff6ff;
+        color: var(--primary);
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        transition: background-color 0.2s;
+    }
+    .btn-back:hover {
+        background-color: #dbeafe;
+    }
+    table.dataTable { border-collapse: collapse !important; width: 100% !important; }
+    table.dataTable thead th { background-color: var(--background); border-bottom: 2px solid var(--border) !important; padding: 14px 16px; font-weight: 600; text-align: left; }
+    table.dataTable tbody td { border-bottom: 1px solid var(--border); padding: 14px 16px; color: #334155; }
+    table.dataTable tbody tr:hover { background-color: #f1f5f9 !important; }
+    .dataTables_wrapper .dataTables_filter input { border: 1px solid var(--border); border-radius: 6px; padding: 6px 12px; outline: none; }
+    .dataTables_wrapper .dataTables_filter input:focus { border-color: var(--primary); }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>VeteraFemeni_curta</h1>
+    <div class="meta">⏱️ Actualitzat el: 28/04/2026 23:18:18</div>
+</div>
+<div class="container">
+    
+<a href="index.html" class="btn-back">← Tornar a l'índex</a>
+<div class="card">
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>equip</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>366</td>
+      <td>Ana</td>
+      <td>TORRES SOTO</td>
+      <td>Vetera</td>
+      <td>Esportiu Penedès</td>
+      <td>2026-04-26 11:27:56.521</td>
+      <td>0 days 00:57:56</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>394</td>
+      <td>Silvia</td>
+      <td>Guzman Garcia</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:34:42.607</td>
+      <td>0 days 01:04:42</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>242</td>
+      <td>Laura</td>
+      <td>Domingo-Peñafiel</td>
+      <td>Vetera</td>
+      <td>CAV</td>
+      <td>2026-04-26 11:35:57.018</td>
+      <td>0 days 01:05:57</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>376</td>
+      <td>Elisenda</td>
+      <td>Vidal Sans</td>
+      <td>Vetera</td>
+      <td>Us estimem Núries</td>
+      <td>2026-04-26 11:37:14.774</td>
+      <td>0 days 01:07:14</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>248</td>
+      <td>Aitana</td>
+      <td>Fernandez Braña</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:38:09.169</td>
+      <td>0 days 01:08:09</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>334</td>
+      <td>Sonia</td>
+      <td>Rosal espejo</td>
+      <td>Vetera</td>
+      <td>CENTRE EXCURSIONISTA PENEDÈS</td>
+      <td>2026-04-26 11:41:59.708</td>
+      <td>0 days 01:11:59</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>209</td>
+      <td>Meritxell</td>
+      <td>Bartra Torrens</td>
+      <td>Vetera</td>
+      <td>Olimpicament run club</td>
+      <td>2026-04-26 11:43:30.446</td>
+      <td>0 days 01:13:30</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>353</td>
+      <td>JESSICA</td>
+      <td>SANCHEZ MARTIN</td>
+      <td>Vetera</td>
+      <td>C.E.Mediterrani</td>
+      <td>2026-04-26 11:46:09.901</td>
+      <td>0 days 01:16:09</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>301</td>
+      <td>Tania</td>
+      <td>Martínez Cabeza</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:46:20.926</td>
+      <td>0 days 01:16:20</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>274</td>
+      <td>Elisabeth</td>
+      <td>Gutiérrez</td>
+      <td>Vetera</td>
+      <td>Olímpicament</td>
+      <td>2026-04-26 11:46:30.646</td>
+      <td>0 days 01:16:30</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>293</td>
+      <td>Leo</td>
+      <td>lopez parra</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:47:17.570</td>
+      <td>0 days 01:17:17</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>347</td>
+      <td>Silvia</td>
+      <td>Ruiz MIracle</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:52:35.444</td>
+      <td>0 days 01:22:35</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>273</td>
+      <td>Raquel</td>
+      <td>Guisado Alcocer</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:55:07.594</td>
+      <td>0 days 01:25:07</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>295</td>
+      <td>Tatiana</td>
+      <td>Luna</td>
+      <td>Vetera</td>
+      <td>No</td>
+      <td>2026-04-26 11:55:44.042</td>
+      <td>0 days 01:25:44</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>218</td>
+      <td>Diana</td>
+      <td>Bordei</td>
+      <td>Vetera</td>
+      <td>C.E. Deporunners</td>
+      <td>2026-04-26 11:57:07.060</td>
+      <td>0 days 01:27:07</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>291</td>
+      <td>Veronica</td>
+      <td>Lopez Martinez</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 11:57:13.430</td>
+      <td>0 days 01:27:13</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>330</td>
+      <td>Anna</td>
+      <td>Porta Martinez</td>
+      <td>Vetera</td>
+      <td>Olímpicament</td>
+      <td>2026-04-26 11:59:25.837</td>
+      <td>0 days 01:29:25</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>305</td>
+      <td>Alba</td>
+      <td>Martos Altarriba</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:00:16.930</td>
+      <td>0 days 01:30:16</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>308</td>
+      <td>Karen</td>
+      <td>Miyar Rodriguez</td>
+      <td>Vetera</td>
+      <td>Olimpicament Run</td>
+      <td>2026-04-26 12:01:07.769</td>
+      <td>0 days 01:31:07</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>249</td>
+      <td>Mónica</td>
+      <td>Fernández Nieto</td>
+      <td>Vetera</td>
+      <td>NaN</td>
+      <td>2026-04-26 12:03:55.739</td>
+      <td>0 days 01:33:55</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>237</td>
+      <td>Marta</td>
+      <td>Cruz Torres</td>
+      <td>Vetera</td>
+      <td>Bigotis trail</td>
+      <td>2026-04-26 12:11:52.550</td>
+      <td>0 days 01:41:52</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<script>
+$(document).ready(function() {
+    $('.display').DataTable({
+        pageLength: -1,
+        language: {
+            url: '//cdn.datatables.net/plug-ins/1.13.6/i18n/ca.json'
+        }
+    });
+});
+</script>
+
+</div>
+</body>
+</html>

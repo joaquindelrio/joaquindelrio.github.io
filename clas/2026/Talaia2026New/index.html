@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classificacions Oficials</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --primary: #2563eb;
+        --surface: #ffffff;
+        --background: #f8fafc;
+        --text-main: #0f172a;
+        --border: #e2e8f0;
+        --excel: #107c41;
+    }
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--background);
+        color: var(--text-main);
+        margin: 0; padding: 0;
+    }
+    .header {
+        background-color: var(--primary);
+        color: white;
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+    .container {
+        max-width: 1200px;
+        margin: -2rem auto 3rem auto;
+        padding: 0 1rem;
+    }
+    .race-section {
+        margin-bottom: 4rem;
+    }
+    .race-type-title {
+        font-size: 1.5rem;
+        color: var(--text-main);
+        margin-bottom: 1.5rem;
+        padding-left: 0.5rem;
+        border-left: 5px solid var(--primary);
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .index-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 1.2rem;
+        list-style: none;
+        padding: 0;
+    }
+    .index-card {
+        background: var(--surface);
+        border-radius: 12px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--border);
+    }
+    .card-content { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .index-title { font-weight: 600; color: var(--text-main); }
+    .index-links { display: flex; gap: 0.5rem; }
+    .btn-sm { flex: 1; text-align: center; padding: 0.5rem; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+    .btn-html { background: #eff6ff; color: var(--primary); }
+    .btn-excel { background: #f0fdf4; color: var(--excel); }
+    .podium-section { margin-bottom: 3rem; }
+    .podium-card {
+        background: linear-gradient(135deg, #fef08a 0%, #facc15 100%);
+        border: none;
+        grid-column: 1 / -1;
+    }
+    @media (max-width: 768px) {
+        .header { padding: 2rem 1rem 4rem 1rem; }
+        .header h1 { font-size: 2rem; }
+        .container { margin-top: -3rem; }
+    }
+</style>
+</head>
+<body>
+<div class="header">
+    <h1>🏁 Classificacions Oficials</h1>
+    <p>Resultats agrupats per tipus de carrera</p>
+</div>
+<div class="container">
+    <div class="podium-section">
+        <ul class="index-grid">
+            
+            <li class="index-card podium-card">
+                <div class="card-content">
+                    <span class="icon">🏆</span>
+                    <span class="index-title">Guanyadors i Podis</span>
+                </div>
+                <div class="index-links">
+                    <a href='podiums.html' class="btn-sm btn-html">Veure Guanyadors</a>
+                </div>
+            </li>
+        
+        </ul>
+    </div>
+
+    
+        <div class="race-section">
+            <h2 class="race-type-title">Cursa Curta</h2>
+            <ul class="index-grid">
+                
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">JuniorMasculi_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='JuniorMasculi_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='JuniorMasculi_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">JuniorFemeni_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='JuniorFemeni_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='JuniorFemeni_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SeniorMasculi_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='SeniorMasculi_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SeniorMasculi_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SeniorFemeni_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='SeniorFemeni_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SeniorFemeni_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">VeteraMasculi_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='VeteraMasculi_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='VeteraMasculi_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">VeteraFemeni_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='VeteraFemeni_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='VeteraFemeni_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">MasterMasculi_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='MasterMasculi_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='MasterMasculi_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">MasterFemeni_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='MasterFemeni_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='MasterFemeni_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SuperMasterMasculi_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='SuperMasterMasculi_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SuperMasterMasculi_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SuperMasterFemeni_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='SuperMasterFemeni_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SuperMasterFemeni_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">General_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='General_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='General_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">Masculi_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='Masculi_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='Masculi_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">Femeni_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='Femeni_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='Femeni_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">LocalMasculi_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='LocalMasculi_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='LocalMasculi_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">LocalFemeni_curta</span>
+                </div>
+                <div class="index-links">
+                    <a href='LocalFemeni_curta.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='LocalFemeni_curta.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            </ul>
+        </div>
+        
+        <div class="race-section">
+            <h2 class="race-type-title">Cursa Llarga</h2>
+            <ul class="index-grid">
+                
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SeniorMasculi_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='SeniorMasculi_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SeniorMasculi_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SeniorFemeni_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='SeniorFemeni_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SeniorFemeni_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">VeteraMasculi_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='VeteraMasculi_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='VeteraMasculi_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">VeteraFemeni_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='VeteraFemeni_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='VeteraFemeni_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">MasterMasculi_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='MasterMasculi_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='MasterMasculi_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">MasterFemeni_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='MasterFemeni_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='MasterFemeni_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SuperMasterMasculi_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='SuperMasterMasculi_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SuperMasterMasculi_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">SuperMasterFemeni_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='SuperMasterFemeni_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='SuperMasterFemeni_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">General_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='General_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='General_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">Masculi_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='Masculi_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='Masculi_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">Femeni_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='Femeni_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='Femeni_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">LocalMasculi_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='LocalMasculi_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='LocalMasculi_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            <li class="index-card">
+                <div class="card-content">
+                    <span class="icon">🏃</span>
+                    <span class="index-title">LocalFemeni_llarga</span>
+                </div>
+                <div class="index-links">
+                    <a href='LocalFemeni_llarga.html' class="btn-sm btn-html">Veure Temps</a>
+                    <a href='LocalFemeni_llarga.xlsx' class="btn-sm btn-excel">⬇️ Excel</a>
+                </div>
+            </li>
+        
+            </ul>
+        </div>
+        
+</div>
+</body>
+</html>

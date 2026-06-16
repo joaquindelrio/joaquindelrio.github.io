@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canicross-JuniorMixt</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 24px;
+    background: #f7f7f9;
+    color: #222;
+}
+h1, h2 {
+    margin-top: 0;
+}
+table.dataTable {
+    width: 100% !important;
+}
+.meta {
+    color: #666;
+    margin-bottom: 16px;
+}
+a {
+    color: #0b57d0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<h1>Canicross-JuniorMixt</h1>
+<p class="meta">Generat el: 15/03/2026 16:47:04</p>
+
+    <p><a href="index.html">← Tornar a l'índex</a></p>
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>club_gen</th>
+      <th>StartTimestamp</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>66</td>
+      <td>ERIC</td>
+      <td>MENDEZ GALLEGO , SUKHI</td>
+      <td>JuniorMIXT</td>
+      <td>CLUB CANICROSS GIRONA</td>
+      <td>2026-03-15 08:33:15</td>
+      <td>2026-03-15 08:59:03.389</td>
+      <td>0 days 00:25:48</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>72</td>
+      <td>MARTINA</td>
+      <td>GARCIA SANCHEZ , LOKI</td>
+      <td>JuniorMIXT</td>
+      <td>SEDENTARIS.CAT / GOS ESPORT</td>
+      <td>2026-03-15 08:33:30</td>
+      <td>2026-03-15 09:03:51.585</td>
+      <td>0 days 00:30:21</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>77</td>
+      <td>ANDREA</td>
+      <td>NIETO RODRÍGUEZ , Wendy</td>
+      <td>JuniorMIXT</td>
+      <td>CANICROSS PENEDÈS</td>
+      <td>2026-03-15 08:33:45</td>
+      <td>2026-03-15 09:05:07.151</td>
+      <td>0 days 00:31:22</td>
+    </tr>
+  </tbody>
+</table>
+    <script>
+    $(document).ready(function() {
+        $('.display').DataTable({
+            pageLength: -1
+        });
+    });
+    </script>
+    
+</body>
+</html>

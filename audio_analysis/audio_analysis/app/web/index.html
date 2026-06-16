@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audio Analysis Web</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f2f4f7; color: #1a1a1a; }
+    .container { max-width: 900px; margin: 0 auto; padding: 24px; }
+    h1 { margin-bottom: 12px; }
+    label { display: block; margin-top: 16px; margin-bottom: 8px; font-weight: bold; }
+    input, button, select, textarea { width: 100%; box-sizing: border-box; padding: 10px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; }
+    button { cursor: pointer; background: #0056b3; color: white; border: none; font-size: 1rem; }
+    button.secondary { background: #6c757d; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .row > * { flex: 1; min-width: 180px; }
+    .panel { background: white; border-radius: 12px; padding: 18px; box-shadow: 0 1px 6px rgba(0,0,0,0.08); margin-top: 16px; }
+    .list-item { padding: 10px 12px; border-bottom: 1px solid #e8eaed; }
+    .list-item:last-child { border-bottom: none; }
+    .dir-item { cursor: pointer; color: #0056b3; }
+    .dir-item:hover { text-decoration: underline; }
+    .status { white-space: pre-wrap; font-family: monospace; background: #f7f9fb; padding: 12px; border-radius: 8px; }
+    a { color: #0056b3; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Audio Analysis</h1>
+    <p>Selecciona la carpeta de WAV local y ejecuta el análisis. El servidor debe estar corriendo desde la carpeta <code>audio_analysis/audio_analysis/app</code>.</p>
+
+    <label for="folder">Carpeta de audio</label>
+    <input id="folder" type="text" placeholder="Ejemplo: audio_analysis/audio_analysis/data/experimento_001/audio" value="audio_analysis/audio_analysis/data/experimento_001/audio" />
+
+    <label for="device-type">Tipo de dispositivo</label>
+    <select id="device-type" style="width: 100%; padding: 10px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px;">
+      <option value="auto" selected>Automático (detectar)</option>
+      <option value="generic">Genérico</option>
+      <option value="hydromoth">HydroMoth</option>
+    </select>
+
+    <div class="row">
+      <button id="browse">Buscar carpeta</button>
+      <button id="run">Ejecutar análisis</button>
+    </div>
+
+    <label for="window">Ventana SPL (segundos)</label>
+    <input id="window" type="number" min="1" value="10" />
+
+    <label for="band_freqs">Frecuencias de banda</label>
+    <input id="band_freqs" type="text" value="63,125,2000" />
+
+    <label style="display: flex; align-items: center; margin-top: 16px;">
+      <input id="include_spectrograms" type="checkbox" style="width: auto; margin-right: 10px; margin-bottom: 0;" checked />
+      <span>Incluir espectrogramas en el informe</span>
+    </label>
+
+    <div class="panel">
+      <h2>Explorador de carpetas</h2>
+      <div id="folderList"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Estado</h2>
+      <div id="status" class="status">Listo.</div>
+      <div id="log" class="status" style="margin-top:12px; min-height:120px; background:#eef1f5;"></div>
+    </div>
+
+    <div class="panel">
+      <h2>Resultados</h2>
+      <div id="results"></div>
+    </div>
+  </div>
+
+  <script>
+    const folderInput = document.getElementById('folder');
+    const folderList = document.getElementById('folderList');
+    const status = document.getElementById('status');
+    const log = document.getElementById('log');
+    const results = document.getElementById('results');
+    const browseButton = document.getElementById('browse');
+    const runButton = document.getElementById('run');
+    let progressTimer = null;
+
+    async function sendJson(url, payload) {
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      return response.json();
+    }
+
+    const apiBase = './api.php';
+
+    async function loadDirectory(path) {
+      setStatus(`Cargando carpeta: ${path}`);
+      const params = new URLSearchParams({ action: 'list', path });
+      const response = await fetch(`${apiBase}?${params}`);
+      const data = await response.json();
+      if (data.error) {
+        setStatus(`Error: ${data.error}`);
+        return;
+      }
+      folderInput.value = data.folder;
+      renderDirectory(data.entries);
+      setStatus(`Carpeta cargada: ${data.folder}`);
+      loadResults(data.folder);
+    }
+
+    function renderDirectory(entries) {
+      if (!entries.length) {
+        folderList.innerHTML = '<p>No hay contenido en esta carpeta.</p>';
+        return;
+      }
+      folderList.innerHTML = entries.map(entry => {
+        if (entry.is_dir) {
+          return `<div class="list-item dir-item" data-path="${entry.path}">📁 ${entry.name}</div>`;
+        }
+        return `<div class="list-item">📄 ${entry.name}</div>`;
+      }).join('');
+      document.querySelectorAll('.dir-item').forEach(item => {
+        item.addEventListener('click', () => loadDirectory(item.dataset.path));
+      });
+    }
+
+    async function loadResults(folder) {
+      const params = new URLSearchParams({ action: 'results', folder });
+      const response = await fetch(`${apiBase}?${params}`);
+      const data = await response.json();
+      if (data.error) {
+        setStatus(`Error: ${data.error}`);
+        return;
+      }
+      if (!data.results.length) {
+        results.innerHTML = '<p>No se han generado resultados todavía.</p>';
+        return;
+      }
+      results.innerHTML = data.results.map(file => {
+        const href = `${apiBase}?action=download&folder=${encodeURIComponent(folder)}&file=${encodeURIComponent(file.name)}`;
+        return `<div class="list-item"><a href="${href}">${file.name}</a></div>`;
+      }).join('');
+    }
+
+    function setStatus(text) {
+      status.textContent = text;
+    }
+
+    function setLog(lines) {
+      if (!lines || !lines.length) {
+        log.textContent = 'Sin salida de análisis aún.';
+        return;
+      }
+      log.textContent = lines.join('\n');
+    }
+
+    function appendLog(line) {
+      log.textContent = log.textContent ? `${log.textContent}\n${line}` : line;
+    }
+
+    async function fetchProgress(folder) {
+      const params = new URLSearchParams({ action: 'status', folder });
+      const response = await fetch(`${apiBase}?${params}`);
+      const data = await response.json();
+      if (!data.error && Array.isArray(data.lines)) {
+        setLog(data.lines);
+      }
+    }
+
+    function startProgressPolling(folder) {
+      if (progressTimer) {
+        clearInterval(progressTimer);
+      }
+      fetchProgress(folder);
+      progressTimer = setInterval(() => {
+        fetchProgress(folder);
+      }, 1000);
+    }
+
+    function stopProgressPolling() {
+      if (progressTimer) {
+        clearInterval(progressTimer);
+        progressTimer = null;
+      }
+    }
+
+    browseButton.addEventListener('click', () => {
+      loadDirectory(folderInput.value.trim() || '.');
+    });
+
+    runButton.addEventListener('click', async () => {
+      const folder = folderInput.value.trim();
+      if (!folder) {
+        setStatus('Debes indicar una carpeta de audio.');
+        return;
+      }
+      setStatus('Ejecutando análisis, espera por favor...');
+      runButton.disabled = true;
+      try {
+        const payload = {
+          folder,
+          window: parseFloat(document.getElementById('window').value) || 10,
+          band_freqs: document.getElementById('band_freqs').value || '63,125,2000',
+          include_spectrograms: document.getElementById('include_spectrograms').checked,
+          device_type: document.getElementById('device-type').value || 'auto',
+        };
+        setLog(['Iniciando análisis...']);
+        startProgressPolling(folder);
+        const response = await sendJson(`${apiBase}?action=run-analysis`, payload);
+        stopProgressPolling();
+        if (response.error) {
+          setStatus(`Error: ${response.error}`);
+          if (response.output) {
+            setLog(response.output);
+          }
+        } else {
+          setStatus(`Análisis completado. PDF generado: ${response.pdf_path}`);
+          setLog(response.output || ['Análisis terminado.']);
+          renderResults(response.results, folder);
+        }
+      } catch (err) {
+        stopProgressPolling();
+        setStatus(`Error de conexión: ${err.message}`);
+        setLog([`Error de conexión: ${err.message}`]);
+      } finally {
+        runButton.disabled = false;
+      }
+    });
+
+    function renderResults(files, folder) {
+      if (!files.length) {
+        results.innerHTML = '<p>No se generaron resultados.</p>';
+        return;
+      }
+      results.innerHTML = files.map(file => {
+        const href = `${apiBase}?action=download&folder=${encodeURIComponent(folder)}&file=${encodeURIComponent(file.name)}`;
+        return `<div class="list-item"><a href="${href}">${file.name}</a></div>`;
+      }).join('');
+    }
+
+    window.addEventListener('load', () => {
+      loadDirectory('audio_analysis/audio_analysis/data');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JuniorMasculi_curta</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 24px;
+    background: #f7f7f9;
+    color: #222;
+}
+h1, h2 {
+    margin-top: 0;
+}
+table.dataTable {
+    width: 100% !important;
+}
+.meta {
+    color: #666;
+    margin-bottom: 16px;
+}
+a {
+    color: #0b57d0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<h1>JuniorMasculi_curta</h1>
+<p class="meta">Generat el: 26/03/2026 00:00:51</p>
+
+    <p><a href="index.html">← Tornar a l'índex</a></p>
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>club_gen</th>
+      <th>StartTimestamp</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>132</td>
+      <td>Adrià</td>
+      <td>Ruiz Martín</td>
+      <td>Junior</td>
+      <td></td>
+      <td>2026-03-15 10:00:30</td>
+      <td>2026-03-15 10:47:20.985</td>
+      <td>0 days 00:46:50</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>123</td>
+      <td>Ramon</td>
+      <td>Rius Font</td>
+      <td>Junior</td>
+      <td></td>
+      <td>2026-03-15 10:00:30</td>
+      <td>2026-03-15 10:59:08.509</td>
+      <td>0 days 00:58:38</td>
+    </tr>
+  </tbody>
+</table>
+    <script>
+    $(document).ready(function() {
+        $('.display').DataTable({
+            pageLength: -1
+        });
+    });
+    </script>
+    
+</body>
+</html>

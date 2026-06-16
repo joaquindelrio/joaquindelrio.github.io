@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursa5km-General</title>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+<script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 24px;
+    background: #f7f7f9;
+    color: #222;
+}
+h1, h2 {
+    margin-top: 0;
+}
+table.dataTable {
+    width: 100% !important;
+}
+.meta {
+    color: #666;
+    margin-bottom: 16px;
+}
+a {
+    color: #0b57d0;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<h1>Cursa5km-General</h1>
+<p class="meta">Generat el: 08/03/2026 15:53:37</p>
+
+    <p><a href="index.html">← Tornar a l'índex</a></p>
+    <table class="dataframe display">
+  <thead>
+    <tr style="text-align: right;">
+      <th>Posició</th>
+      <th>Dorsal</th>
+      <th>nom</th>
+      <th>cognoms</th>
+      <th>CategoriaNom</th>
+      <th>club_gen</th>
+      <th>StartTimestamp</th>
+      <th>Timestamp</th>
+      <th>TempsCursa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>201</td>
+      <td>ÀLEX</td>
+      <td>LUQUE CLEMENTE</td>
+      <td>8</td>
+      <td>CANECO PRO TEAM</td>
+      <td>2026-03-06 10:00:00</td>
+      <td>2026-03-08 14:16:52.696</td>
+      <td>2 days 04:16:52</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>240</td>
+      <td>MIQUEL</td>
+      <td>SELLÉS</td>
+      <td>9</td>
+      <td>RUN D’AIRES</td>
+      <td>2026-03-06 10:00:00</td>
+      <td>2026-03-08 14:16:59.913</td>
+      <td>2 days 04:16:59</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>260</td>
+      <td>RODOLFO</td>
+      <td>SALAZAR RAMOS</td>
+      <td>Vetera_B</td>
+      <td>CORREM PER LA TERRA</td>
+      <td>2026-03-06 10:00:00</td>
+      <td>2026-03-08 14:17:02.605</td>
+      <td>2 days 04:17:02</td>
+    </tr>
+  </tbody>
+</table>
+    <script>
+    $(document).ready(function() {
+        $('.display').DataTable({
+            pageLength: -1
+        });
+    });
+    </script>
+    
+</body>
+</html>
