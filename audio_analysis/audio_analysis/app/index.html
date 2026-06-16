@@ -92,6 +92,16 @@
     }
 
     const apiBase = './web/api.php';
+    const isGithubPages = window.location.hostname.endsWith('github.io');
+
+    function initGithubPagesMode() {
+      setStatus('Modo GitHub Pages: la API PHP no se ejecuta aqui. Usa quim.obsea.es para listar WAV y analizar.');
+      setLog(['GitHub Pages sirve archivos estaticos.', 'El backend (web/api.php + Python) no esta disponible en este entorno.']);
+      folderList.innerHTML = '<p>El listado de carpetas/WAV requiere backend activo en el servidor.</p>';
+      results.innerHTML = '<p>Los resultados se generan solo en el entorno con backend (quim.obsea.es).</p>';
+      browseButton.disabled = true;
+      runButton.disabled = true;
+    }
 
     async function loadDirectory(path) {
       setStatus(`Cargando carpeta: ${path}`);
@@ -239,6 +249,10 @@
     }
 
     window.addEventListener('load', () => {
+      if (isGithubPages) {
+        initGithubPagesMode();
+        return;
+      }
       loadDirectory('audio_analysis/audio_analysis/data');
     });
   </script>
